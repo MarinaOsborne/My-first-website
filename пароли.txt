@@ -1,0 +1,50 @@
+<a href="https://wa.me/+79627055569/?text=Здравствуйте!"><img src ="images/whatsapp.png"></a>
+veles-90@inbox.ru
+http://vk.com/feed
+
+http://ses.is-best.net
+ftp://b15_26278272@ftp.byethost15.com/ses.is-best.net
+spbdesinfector@gmail.com
+3t3vdemb
+
+b15_26278272
+ftp.byethost15.com
+
+<form action="send.php" method="post">
+
+Ваше имя <input type="text" name="first_name"><br>
+Email: <input type="text" name="email" required placeholder="Обязательное поле"><br>
+Сообщение:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+
+veles-90@inbox.ru
+
+<?php 
+
+if(isset($_POST['submit'])){
+/* Устанавливаем e-mail Кому и от Кого будут приходить письма */   
+$to = "spbdesinfector@gmail.com"; // Здесь нужно написать e-mail, куда будут приходить письма   
+$from = "no-reply@ses.is-best.net"; // Здесь нужно написать e-mail, от кого будут приходить письма, например no-reply(собака)epicblog.net
+ 
+/* Указываем переменные, в которые будет записываться информация с формы */
+$first_name = $_POST['first_name'];
+$phone = $_POST['tel'];
+$subject = "Форма отправки сообщений с сайта";
+     
+     
+/* Переменная, которая будет отправлена на почту со значениями, вводимых в поля */
+$mail_to_myemail = "Здравствуйте! 
+Было отправлено сообщение с сайта! 
+Имя отправителя: $first_name
+Номер телефона: $phone
+Чтобы ответить на письмо, создайте новое сообщение, скопируйте электронный адрес и вставьте в поле Кому.";  
+     
+$headers = "From: $from \r\n";     
+}
+?>
+<!--Переадресация на главную страницу сайта, через 3 секунды-->
+<script language="JavaScript" type="text/javascript">
+function changeurl(){eval(self.location="http://ses.is-best.net");}
+window.setTimeout("changeurl();",3000);
+</script>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: http://ses.is-best.net/sitemap.xml

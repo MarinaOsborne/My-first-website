@@ -7,8 +7,9 @@ $from = "no-reply@uventa-stroy.ru";
  
 $first_name = $_POST['first_name'];
 $email = $_POST['email'];
-$brand = $_POST['brand'];
-$subject = "Заявка с сайта uventa-stroy.ru";
+$phone = $_POST['phone'];
+$message = $_POST['message'];
+$subject = "Заявка с сайта на расчет проекта";
      
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
 {
@@ -16,11 +17,12 @@ show_error("<br /> Е-mail адрес не существует");
 }
      
 $mail_to_myemail = "
-Поступила заявка с сайта! 
-Запрошен каталог фирмы $brand
+Поступила заявка на расчет проекта! 
+
 Имя отправителя: $first_name
-E-mail: $email";  
-     
+E-mail: $email  
+Телефон: $phone
+Текст сообщения: $message ";    
 $headers = "From: $from \r\n";
      
 mail($to, $subject, $mail_to_myemail, $headers . 'Content-type: text/plain; charset=utf-8');
